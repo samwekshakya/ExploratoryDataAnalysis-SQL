@@ -2,6 +2,7 @@
 SELECT * 
 FROM layoffs_staging2; 
 
+-- Aggregate Functions
 SELECT MAX(total_laid_off), MAX(percentage_laid_off)
 FROM layoffs_staging2; 
 
@@ -26,6 +27,7 @@ FROM layoffs_staging2
 GROUP BY YEAR(`date`) 
 ORDER BY 1 desc;
 
+-- Laid Off By Company
 SELECT company, SUM(total_laid_off)
 FROM layoffs_staging2 
 GROUP BY company 
